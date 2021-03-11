@@ -4,6 +4,7 @@ import GridListTile from "@material-ui/core/GridListTile";
 import { GridListTileBar, IconButton } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import store from "../../redux/store";
+import {setSelectedImg} from "../../redux/selectedImg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,8 +30,7 @@ export default function ImageGridList({tileData, history
   const classes = useStyles();
 
   const onAddCaption = (tile) => {
-    console.log(tile);
-    // store.dispatch(setSelectedImg())
+    store.dispatch(setSelectedImg(tile))
     history.push("/customize-image");
   }
   return (
